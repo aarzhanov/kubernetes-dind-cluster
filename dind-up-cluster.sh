@@ -229,7 +229,7 @@ function dind::kube-down {
   dind::step "Stopping dind cluster"
   # Since restoring a stopped cluster is not yet supported, use the nuclear option
   dind::docker_compose kill
-  dind::docker_compose rm -f --all
+  dind::docker_compose rm -f -v
 }
 
 # Waits for a kube-system pod (of the provided name) to have the phase/status "Running".
